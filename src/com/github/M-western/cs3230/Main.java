@@ -1,66 +1,93 @@
-package com.github.M-western.cs3230;
+package.src.com.github.M-western.cs3230;
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
-public class main{
+public class Main{
+
     public static void main(String[] args){
-        int argLength = args.Length;
-        int[] fin = new Int[argLength];
-        for(int i = 0; i < argLength; i++){
-            fin[i] = Integer.parseInt(args[i]);
-        }
-        System.out.println("Sum: " + sum(fin));
-        System.out.println("Evens: " + evens(fin));
-        System.out.println("Odds: " + odds(fin));
-        System.out.println("Max: " + max(fin));
-        System.out.println("Min: " + min(fin));
-    }
-    public static int sum(int[] arr){
-        int count = arr[0] + 1;
-        int total = 0;
-        for(int i =1; i<count;i++){
-            total += arr[i];
-        }
-        return total;
-    }
-    public static List evens(int[] arr){
-        int count = arr[0] + 1;
-        List<Integer> evensList = new ArrayList<Integer>();
-        for(int i = 1; i<count;i++){
-            if(arr[i] %2 ==0){
-                evensList.add(arr[i]);
+        
+        while(true){
+
+            boolean math = false;
+            boolean stringMenu = false;
+        
+            System.out.println("Matt Western Assignment 3");
+            System.out.println("Main Menu");
+            System.out.println("1. Math Menu");
+            System.out.println("2. String Menu");
+            System.out.println("3. Exit");
+            int menuInput = CLI.getUserInput;
+            swithc(userInput){
+                case 1:
+                    math = true;
+                    break;
+                case 2:
+                    stringMenu = true;
+                    break;
+                default:
+                    System.exit(0);
+            }
+
+        while(math){
+            int nums = CLI.getNewNumbers();
+            System.out.println("1. Update");
+            System.out.println("2. Sum");
+            System.out.println("3. Even");
+            System.out.println("4. Odd");
+            System.out.println("5. Max");
+            System.out.println("6. Min");
+            System.out.println("7. Exit");
+            int userInput = CLI.getUserInput();
+            switch(userInput){
+                case 1:
+                    System.out.println("Selected: 1");
+                    nums = CLI.getNewNumbers();
+                    break;
+                case 2:
+                    System.out.println("Selected: 2");
+                    System.out.println(calculations.sum(nums));
+                    break;
+                case 3:
+                System.out.println("Selected:3");
+                    System.out.println(calculations.evens(nums));
+                    break;
+                case 4:
+                System.out.println("Selected:4");
+                    System.out.println(calculations.odds(nums));
+                    break;
+                case 5:
+                System.out.println("Selected:5");
+                    System.out.println(calculations.max(nums));
+                    break;
+                case 6:
+                System.out.println("Selected:6");
+                    System.out.println(calculations.min(nums));
+                    break;
+                default:
+                    math = false;
+                    break;
             }
         }
-        return evensList;
-    }
-    public static List odds(int[] arr){
-        int count = arr[0] + 1;
-        List<Integer> oddsList = new ArrayList<Integer>();
-        for(int i = 1; i<count;i++){
-            if(arr[i] %2 !=0){
-                oddsList.add(arr[i]);
+        List<String> stringList;
+        while(stringMenu){
+            System.out.println("1. Palindrome");
+            System.out.println("2. Main Menu");
+            System.out.println("3. Exit");
+            int stringNums = CLI.getUserInput();
+            switch(stringNums){
+                case 1:
+                    stringList = CLI.getStrings();
+                    System.out.println(StringOperations.palindrome(stringList)):
+                    break;
+                case 2:
+                    stringMenu = false;
+                    break;
+                default:
+                    System.exit(0);
             }
         }
-        return oddsList;
     }
-    public static int max(int[] arr){
-        int count = arr[0] + 1;
-        int max = arr[1];
-        for(i = 1; i<count; i++){
-            if(arr[i > max]){
-                max = arr[i];
-            }
-        }
-        return max;
-    }
-    public static int min(int[] arr){
-        int count = arr[0] + 1;
-        int min = arr[1];
-        for(i = 1; i<count; i++){
-            if(arr[i < min]){
-                min = arr[i];
-            }
-        }
-        return min;
-    }
+}
 }
