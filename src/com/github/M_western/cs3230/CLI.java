@@ -1,4 +1,4 @@
-package com.github.M-western.cs3230;
+package src.com.github.M_western.cs3230;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
@@ -7,9 +7,9 @@ import java.util.Arrays;
 public class CLI{
 
 
-private static Scanner myScan = new Scanner(System.in);
+public static Scanner myScan = new Scanner(System.in);
 
-    private static int getUserInput(){
+    public static int getUserInput(){
         String userString = myScan.next();
         int i = 0;
         try{
@@ -22,7 +22,7 @@ private static Scanner myScan = new Scanner(System.in);
         return i;
     }
 
-    private static int[] getNewNumbers(){
+    public static int[] getNewNumbers(){
         System.out.println("Enter a list of numbers seperated by a space:");
         String[] userInts = myScan.nextLine().split("\\s+");
         int[] nums = new int[userInts.length];
