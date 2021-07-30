@@ -1,5 +1,6 @@
-package com.github.M-western.cs3230;
+package src.com.github.M_western.cs3230;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class calculations{
@@ -34,8 +35,8 @@ public class calculations{
     public static int max(int[] arr){
         int count = arr[0] + 1;
         int max = arr[1];
-        for(i = 1; i<count; i++){
-            if(arr[i > max]){
+        for(int i = 1; i<count; i++){
+            if(arr[i] > max){
                 max = arr[i];
             }
         }
@@ -44,11 +45,12 @@ public class calculations{
     public static int min(int[] arr){
         int count = arr[0] + 1;
         int min = arr[1];
-        for(i = 1; i<count; i++){
-            if(arr[i < min]){
+        for(int i = 1; i<count; i++){
+            if(arr[i] < min){
                 min = arr[i];
             }
         }
         return min;
     }
+   
 }
