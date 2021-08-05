@@ -1,8 +1,12 @@
 package src.com.github.M_western.cs3230.GUI;
 
 import javax.swing.*;
+import javax.xml.transform.Result;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Enumeration;
+
 import src.com.github.M_western.cs3230.calculations;
 
 public class Gui {
@@ -19,40 +23,48 @@ public class Gui {
     private JRadioButton fiveNumberSummaryRadioButton;
 
     Double[] results;
+    String radioButton = "";
+    private ButtonGroup buttonGroup;
 
     public Gui() {
+        //this.getContentPane().setLayout(new FlowLayout());
+        minRadioButton = new JRadioButton("min");
+        minRadioButton.setActionCommand("min");
+        maxRadioButton = new JRadioButton("max");
+        maxRadioButton.setActionCommand("max");
+        evensRadioButton = new JRadioButton("evens");
+        evensRadioButton.setActionCommand("evens");
+        oddsRadioButton = new JRadioButton("odds");
+        oddsRadioButton.setActionCommand("odds");
+        sumRadioButton = new JRadioButton("sum");
+        sumRadioButton.setActionCommand("sum");
+        standardDeviationRadioButton = new JRadioButton("standard dev");
+        standardDeviationRadioButton.setActionCommand("std");
+        fiveNumberSummaryRadioButton = new JRadioButton("five number summary");
+        fiveNumberSummaryRadioButton.setActionCommand("five");
+        sumRadioButton.setSelected(true);
+        buttonGroup = new ButtonGroup();
+        buttonGroup.add(minRadioButton);
+        buttonGroup.add(maxRadioButton);
+        buttonGroup.add(evensRadioButton);
+        buttonGroup.add(oddsRadioButton);
+        buttonGroup.add(sumRadioButton);
+        buttonGroup.add(standardDeviationRadioButton);
+        buttonGroup.add(fiveNumberSummaryRadioButton);
+        submitButton = new JButton("submit");
+        //submitButton.addActionListener(this);
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                results = getResults();
-                String resultString = String.valueOf(results);
-                ResultField.setText(resultString);
+                for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
+                    AbstractButton button = buttons.nextElement();
+
+                    if (button.isSelected()) {
+                        ResultField.setText(buttonGroup.getSelection().getActionCommand());
+                    }
+                }
             }
         });
-    }
-
-    public Gui() {
-        SubmitButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                results = getResults();
-                String resultString = String.valueOf(results);
-                ResultField.setText(resultString);
-            }
-        });
-    }
-
-    minRadioButton.addActionListener(new
-
-    ActionListener() {
-        @Override
-        public void actionPerformed (ActionEvent e){
-            ResultField.setText(String.valueOf(calculations.min(results)));
-        }
-    });
-
-    public Double[] getResults(){
-
     }
 
     public static void main(String[] args){
@@ -66,5 +78,5 @@ public class Gui {
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
-
+        }
 

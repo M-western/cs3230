@@ -25,6 +25,7 @@
           </grid>
         </constraints>
         <properties>
+          <editable value="false"/>
           <text value="Results"/>
         </properties>
       </component>
