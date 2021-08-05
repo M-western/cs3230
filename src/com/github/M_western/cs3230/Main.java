@@ -1,8 +1,9 @@
-package.src.com.github.M-western.cs3230;
+package src.com.github.M_western.cs3230;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.List;
 
 public class Main{
 
@@ -18,8 +19,8 @@ public class Main{
             System.out.println("1. Math Menu");
             System.out.println("2. String Menu");
             System.out.println("3. Exit");
-            int menuInput = CLI.getUserInput;
-            swithc(userInput){
+            int menuInput = CLI.getUserInput();
+            switch(menuInput){
                 case 1:
                     math = true;
                     break;
@@ -31,7 +32,7 @@ public class Main{
             }
 
         while(math){
-            int nums = CLI.getNewNumbers();
+            int[] nums = CLI.getNewNumbers();
             System.out.println("1. Update");
             System.out.println("2. Sum");
             System.out.println("3. Even");
@@ -79,7 +80,7 @@ public class Main{
             switch(stringNums){
                 case 1:
                     stringList = CLI.getStrings();
-                    System.out.println(StringOperations.palindrome(stringList)):
+                    System.out.println(StringOperations.palindrome(stringList));
                     break;
                 case 2:
                     stringMenu = false;
