@@ -5,17 +5,15 @@ import java.util.List;
 
 public class calculations{
     public static int sum(int[] arr){
-        int count = arr[0] + 1;
         int total = 0;
-        for(int i =1; i<count;i++){
+        for(int i =0; i<arr.length;i++){
             total += arr[i];
         }
         return total;
     }
     public static List evens(int[] arr){
-        int count = arr[0] + 1;
         List<Integer> evensList = new ArrayList<Integer>();
-        for(int i = 1; i<count;i++){
+        for(int i = 0; i<arr.length;i++){
             if(arr[i] %2 ==0){
                 evensList.add(arr[i]);
             }
@@ -23,9 +21,8 @@ public class calculations{
         return evensList;
     }
     public static List odds(int[] arr){
-        int count = arr[0] + 1;
         List<Integer> oddsList = new ArrayList<Integer>();
-        for(int i = 1; i<count;i++){
+        for(int i = 0; i<arr.length;i++){
             if(arr[i] %2 !=0){
                 oddsList.add(arr[i]);
             }
@@ -33,9 +30,8 @@ public class calculations{
         return oddsList;
     }
     public static int max(int[] arr){
-        int count = arr[0] + 1;
-        int max = arr[1];
-        for(int i = 1; i<count; i++){
+        int max = 0;
+        for(int i = 0; i<arr.length; i++){
             if(arr[i] > max){
                 max = arr[i];
             }
@@ -43,14 +39,14 @@ public class calculations{
         return max;
     }
     public static int min(int[] arr){
-        int count = arr[0] + 1;
-        int min = arr[1];
-        for(int i = 1; i<count; i++){
+        int min = arr[0];
+        for(int i = 0; i<arr.length; i++){
             if(arr[i] < min){
                 min = arr[i];
             }
         }
         return min;
     }
+
    
 }
