@@ -18,6 +18,10 @@ public class mathGui {
     private JCheckBox minCheckBox;
     private JLabel userInputGuide;
 
+    public JPanel getpanel1() {
+        return panel1;
+    }
+
     public mathGui() {
 
         submitButton.addActionListener(new ActionListener() {
